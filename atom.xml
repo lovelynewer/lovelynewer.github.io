@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Mogulの博客</title>
+  
+  <subtitle>记录个人的点点滴滴。</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://lovelynewer.github.io/"/>
+  <updated>2019-06-11T05:02:04.227Z</updated>
+  <id>http://lovelynewer.github.io/</id>
+  
+  <author>
+    <name>Mogul</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://lovelynewer.github.io/2019/06/11/hello-world/"/>
+    <id>http://lovelynewer.github.io/2019/06/11/hello-world/</id>
+    <published>2019-06-11T05:02:04.227Z</published>
+    <updated>2019-06-11T05:02:04.227Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>win10+tensorflow-GPU(包含CUDA+cuDNN)</title>
+    <link href="http://lovelynewer.github.io/2019/06/09/win10-tensorflow-GPU-%E5%8C%85%E5%90%ABCUDA-cuDNN/"/>
+    <id>http://lovelynewer.github.io/2019/06/09/win10-tensorflow-GPU-包含CUDA-cuDNN/</id>
+    <published>2019-06-09T10:38:22.000Z</published>
+    <updated>2019-06-10T11:09:07.809Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="win10-tensorflow-GPU-包含CUDA-cuDNN-Jupter-Notebook"><a href="#win10-tensorflow-GPU-包含CUDA-cuDNN-Jupter-Notebook" class="headerlink" title="win10+tensorflow-GPU(包含CUDA+cuDNN)+Jupter Notebook"></a>win10+tensorflow-GPU(包含CUDA+cuDNN)+Jupter Notebook</h2><p>本人小白一枚，安装过程踩了无数的坑，终于弄好了，跟大家分享一下，希望能帮助在坑中的你们。<br>本文主要参考<a href="https://www.cnblogs.com/guoyaohua/p/9265268.html?tdsourcetag=s_pcqq_aiomsg#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85anaconda" target="_blank" rel="noopener">https://www.cnblogs.com/guoyaohua/p/9265268.html?tdsourcetag=s_pcqq_aiomsg#%E7%AC%AC%E4%B8%80%E6%AD%A5%E5%AE%89%E8%A3%85anaconda</a></p><p>1.anaconda网址<a href="https://www.anaconda.com/distribution/" target="_blank" rel="noopener">https://www.anaconda.com/distribution/</a><br>找anaconda历史版本：第一步在Documentation中点击read more,然后下拉找到Previous versions,点击红圈就可以找到历史版本。</p><p>2.配置环境变量：我是配置子在系统变量里了（习惯），亲测两种都行。<br>    首先是我用了清华镜像库，下载速度会特别快:以管理员身份打开Anaconda Prompt，输入<br>    conda config –add channels <a href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/</a><br>    conda config –set show_channel_urls yes<br>    创建虚拟环境：conda create -n tensorflow-gpu pip python=3.6<br>    激活虚拟环境：activate tensorflow-gpu</p><p>3.安装tensorflow-gpu，我用的是1.9.0版本，最新版本是2.0.0，听说可能不兼容：</p><blockquote><p>pip install –ignore-installed –upgrade tensorflow-gpu==1.9.0<br>注意：务必注意一点，在安装完tensroflow后，由于我们是新创建的conda环境，该环境中基本上是空的，有很多包和IDE并没有安装进来，例如“Ipython”，“spyder”此时如果我们在该环境下打开spyder/Ipyton/jupyter notebook等，会发现其实IDE使用的kernel并不是新建立的这个环境的kernel，而是“base”这个环境的，而“base”环境中我们并没有安装tensorflow，所以一定无法import。这也就是为什么有很多人在安装好tensorflow后仍然在IDE里无法正常使用的原因了。<br>conda install anaconda<br>4.安装CUDA Toolkit + cuDNN，资源是按照我参考的文章下载的。这里的重点是：卸载显卡驱动。</p></blockquote><h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>1.jupter notebook发现内核错误【kernel error】 FileNotFoundError: [WinError 2] The system cannot find the file specified，<br>查了资料原来是我中午用conda删除了一些环境，所以牵涉到这个jupyter notebook，可能是路径问题，导致文件找不到。<br>解决方法：在cmd中运行   python -m ipykernel install –user<br>2.在Jupter Notebook中找不到自己创建的虚拟环境<br>需要安装nb_conda</p><blockquote><p>conda install nb_conda</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;win10-tensorflow-GPU-包含CUDA-cuDNN-Jupter-Notebook&quot;&gt;&lt;a href=&quot;#win10-tensorflow-GPU-包含CUDA-cuDNN-Jupter-Notebook&quot; class=&quot;headerlink&quot; t
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
